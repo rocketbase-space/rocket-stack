@@ -37,7 +37,34 @@ Example: `add login rate limiting`
 **Or invoke a skill directly:** `/mission-control login` · `/create-mission-map` · `/maintain-mission-map` · `/pre-flight-check login` · `/ground-control`  
 For `/mission-control`, Surface comes from the map or code; ask only if unclear.
 
-Copy the six skill folders into your agent skills directory.
+## Install
+
+Tested with Cursor and Claude Code. Should work with any agent that supports `SKILL.md` skills.
+
+```bash
+git clone https://github.com/rocketbase-space/rocket-stack.git
+cd rocket-stack
+```
+
+**Cursor** (personal; for one project use `.cursor/skills/` in that repo):
+
+```bash
+mkdir -p ~/.cursor/skills
+cp -R rocket-mode mission-control create-mission-map \
+      maintain-mission-map pre-flight-check ground-control \
+      ~/.cursor/skills/
+```
+
+**Claude Code** (personal; for one project use `.claude/skills/` in that repo):
+
+```bash
+mkdir -p ~/.claude/skills
+cp -R rocket-mode mission-control create-mission-map \
+      maintain-mission-map pre-flight-check ground-control \
+      ~/.claude/skills/
+```
+
+**Other agents:** copy the same six folders into your agent's skills directory.
 
 Repo: https://github.com/rocketbase-space/rocket-stack  
 License: MIT
